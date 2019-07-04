@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 use App\Log\Contracts\LoggableContract;
+use App\Log\Models\Log;
 
 trait Loggable
 {
@@ -249,7 +250,7 @@ trait Loggable
             'event' => $this->logEvent,
             'loggable_id' => $this->getKey(),
             'loggable_type' => $this->getMorphClass(),
-            'user_id' => 1, // Auth::id(),
+            'user_id' => Auth::id(),
         ]);
     }
 
