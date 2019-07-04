@@ -6,8 +6,7 @@ return [
     'fields' => [
         'name' => 'Name'
     ],
-    'modified' => [
-        'name' => '{0} :new<br>|{1} <strike>:old</strike> :new<br>'
-    ]
+    'modified' => '{0} :new<br>|{1} <strike>:old</strike> :new<br>',
+
 
 ];

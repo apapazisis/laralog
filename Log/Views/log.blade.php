@@ -3,7 +3,7 @@
 
     <ul>
         @foreach($log->getModified() as $attribute => $modified)
-            <li>@lang('log.fields.' . $attribute) {!! trans_choice('log.modified.' . $attribute, intval(isset($modified['old'])), $modified) !!} </li>
+            <li>@lang('log.fields.' . $attribute) {!! trans_choice('log.modified', intval(isset($modified['old'])), $modified) !!} </li>
         @endforeach
     </ul>
 @endforeach

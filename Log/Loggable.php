@@ -262,7 +262,7 @@ trait Loggable
             'event' => $this->logEvent,
             'loggable_id' => $this->getKey(),
             'loggable_type' => $this->getMorphClass(),
-            'user_id' => Auth::id(),
+            'user_id' => 1,// Auth::id(),
         ]);
     }
 
