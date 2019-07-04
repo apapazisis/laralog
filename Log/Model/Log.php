@@ -14,6 +14,6 @@ class Log extends Model implements LogContract
     protected $casts = [
         'old_values' => 'json',
         'new_values' => 'json',
-        'logable_id' => 'integer',
+        'loggable_id' => 'integer',
     ];
 }
