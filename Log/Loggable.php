@@ -247,8 +247,8 @@ trait Loggable
             'old_values' => $old,
             'new_values' => $new,
             'event' => $this->logEvent,
-            'logable_id' => $this->getKey(),
-            'logable_type' => $this->getMorphClass(),
+            'loggable_id' => $this->getKey(),
+            'loggable_type' => $this->getMorphClass(),
             'user_id' => 1, // Auth::id(),
         ]);
     }
