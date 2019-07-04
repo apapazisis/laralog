@@ -53,6 +53,18 @@ trait Loggable
     }
 
     /**
+     * @return bool
+     */
+    public function readyForLogging(): bool
+    {
+        if (static::$logDisabled) {
+            return false;
+        }
+
+        return $this->isEventLoggable($this->logEvent);
+    }
+
+    /**
      * Method which fires when create a model
      *
      * @return array
@@ -170,7 +182,7 @@ trait Loggable
      */
     public function getLogEvents(): array
     {
-        return [
+        return $this->logEvents ?? [
             'created',
             'updated',
             'deleted',
@@ -225,7 +237,7 @@ trait Loggable
     /**
      * @return string
      */
-    public function getLogDriver()
+    public function getLogDriver(): string
     {
         return $this->logDriver ?? 'database';
     }

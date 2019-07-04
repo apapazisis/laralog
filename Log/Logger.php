@@ -36,6 +36,10 @@ class Logger extends Manager
      */
     public function execute(LoggableContract $model)
     {
+        if (!$model->readyForLogging()) {
+            return;
+        }
+
         $driver = $this->logDriver($model);
 
         if (!$this->fireLogEvent($model, $driver)) {
